@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="DataStructures_Algorithms" Database="" Version="10000">
-  <Project Name="DataStructures_Arrays" Path="DataStructures_Arrays/DataStructures_Arrays.project" Active="Yes"/>
+  <Project Name="DataStructures_Arrays" Path="DataStructures_Arrays/DataStructures_Arrays.project" Active="No"/>
+  <Project Name="DataStructures_HashTables" Path="DataStructures_HashTables/DataStructures_HashTables.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
       <Project Name="DataStructures_Arrays" ConfigName="Debug"/>
+      <Project Name="DataStructures_HashTables" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
       <Project Name="DataStructures_Arrays" ConfigName="Release"/>
+      <Project Name="DataStructures_HashTables" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
