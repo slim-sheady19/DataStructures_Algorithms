@@ -1,0 +1,40 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+Makefile
+tags
+.codelite/ctags
+.codelite/DataStructures_Algorithms-shea.tags
+DataStructures_Arrays/compile_flags.txt
+DataStructures_Arrays/DataStructures_Arrays.txt
+DataStructures_Arrays/DataStructures_Arrays.mk
+.codelite/DataStructures_Algorithms.session
