@@ -31,10 +31,6 @@ int main()
 			break;
 		}
 		
-		
-		
-		
-		
 		/*for (int j = 0; j < size1; j++)
 		{
 			int temp = arr1[j];

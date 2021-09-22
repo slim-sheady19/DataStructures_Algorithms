@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="DataStructures_Algorithms" Database="" Version="10000">
   <Project Name="DataStructures_Arrays" Path="DataStructures_Arrays/DataStructures_Arrays.project" Active="No"/>
-  <Project Name="DataStructures_HashTables" Path="DataStructures_HashTables/DataStructures_HashTables.project" Active="Yes"/>
+  <Project Name="DataStructures_HashTables" Path="DataStructures_HashTables/DataStructures_HashTables.project" Active="No"/>
+  <Project Name="DataStructures_LinkedLists" Path="DataStructures_LinkedLists/DataStructures_LinkedLists.project" Active="No"/>
+  <Project Name="DataStructures_StacksQueues" Path="DataStructures_StacksQueues/DataStructures_StacksQueues.project" Active="No"/>
+  <Project Name="DataStructures_Trees" Path="DataStructures_Trees/DataStructures_Trees.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
       <Project Name="DataStructures_Arrays" ConfigName="Debug"/>
       <Project Name="DataStructures_HashTables" ConfigName="Debug"/>
+      <Project Name="DataStructures_LinkedLists" ConfigName="Debug"/>
+      <Project Name="DataStructures_StacksQueues" ConfigName="Debug"/>
+      <Project Name="DataStructures_Trees" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
       <Project Name="DataStructures_Arrays" ConfigName="Release"/>
       <Project Name="DataStructures_HashTables" ConfigName="Release"/>
+      <Project Name="DataStructures_LinkedLists" ConfigName="Release"/>
+      <Project Name="DataStructures_StacksQueues" ConfigName="Release"/>
+      <Project Name="DataStructures_Trees" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
