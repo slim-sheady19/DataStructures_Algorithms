@@ -26,7 +26,8 @@ public:
 		root = NULL;
 	}
 	
-	void insert_node(int data)
+	void insert_node(int data) //more efficient way of doing this below
+							   
 	{
 		bool node_found = false;
 		
@@ -76,12 +77,65 @@ public:
 			}
 		}
 	}
-	
-	void lookup(int data)
+	bool lookup(int data)
 	{
+		if (root == NULL)
+		{
+			cout << "nothing to lookup in the tree" << endl;
+			return false;
+		}
 		
+		Node *current_node = root;
+		while (current_node != NULL)
+		{
+			if (data < current_node->data)
+			{
+				current_node = current_node->left;
+			}
+			else if (data > current_node->data)
+			{
+				current_node = current_node->right;
+			}
+			else if (data == current_node->data)
+			{
+				cout << current_node->data << " found" << endl;
+				break;
+			}
+		/*	else if ((current_node->right==NULL) || (current_node->left==NULL))
+			{
+				cout << data << "not found" << endl;
+				break;
+			}*/
+			
+		}
+		return false;
 	}
 };
+	
+/*{
+	Node *newNode = new Node(data);
+	Node *temp = root; /* temp Pointer to start traversing from root and traverses downward path to search
+						 where the new node to be inserted
+
+	Node *x = NULL; // this pointer will help us in maintaining the trailing pointer of temp.
+
+	while (temp != NULL)
+	{
+		x = temp;
+		if (data < temp->data)
+			temp = temp->left;
+		else
+			temp = temp->right;
+	}
+
+	if (x == NULL) // if tree is empty
+		root = newNode;
+
+	else if (data < x->data)
+		x->left = newNode;
+	else
+		x->right = newNode;
+}*/
 
 /*
  * void display()
@@ -116,6 +170,9 @@ int main()
 	bst->insert_node(150);
 	bst->insert_node(25);
 	bst->insert_node(175);
+	bst->lookup(25);
+	bst->lookup(30);
+	bst->lookup(175);
 }
 
 

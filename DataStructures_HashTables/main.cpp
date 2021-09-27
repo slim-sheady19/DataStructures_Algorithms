@@ -1,61 +1,79 @@
 #include <iostream>
 #include <map>
+#include <string>
 using namespace std;
+const int ARRAY_SIZE = 50;
+
+class HashNode
+{
+	public:
+	string key{};
+	int value;
+	
+	HashNode(string name, int value)
+	{
+		this->key = name;
+		this->value = value;
+	}
+};
+
+class HashTable
+{
+    HashNode **arr; // declaring array of hash node
+public:
+
+    HashTable()
+	{
+        arr = new HashNode*[ARRAY_SIZE]; // creating array of hash node.
+        for(int i = 0; i < ARRAY_SIZE; i++)
+		{
+            arr[i] = NULL;
+        }
+    }
+	
+	void set(string name, int value)
+	{
+		int key = hashFunction(value);
+		arr[key] = new HashNode(name, value);
+		cout << name << " has been set to key " << key << "in the hash table with value " << value << endl;
+	}
+	
+	void get(string name)
+	{
+		for (int i = 0; i < ARRAY_SIZE; i++)
+		{
+			if (arr[i]->key == name)
+			{
+				cout << arr[i]->key << " has value of " << arr[i]->value << endl;
+				return;
+			}
+			else
+			{
+				cout << "this item does not exist" << endl;
+			}
+		}
+	}
+	
+	// creating a hash function(this is an example of open addressing)
+    int hashFunction(int key)
+	{
+        return key % ARRAY_SIZE;
+    }
+	
+	
+};
 
 int main()
 {
-	int arr1[] {2,5,6,7,3,5,1,2,4};
-	int arr2[] {2,1,1,2,3,5,1,2,4};
+	HashNode *node = new HashNode("fuck", 5);
+	//cout << node->key;
 	
-	int size1 = sizeof(arr1)/sizeof(arr1[0]);
-	int size2 = sizeof(arr2)/sizeof(arr2[0]);
+	HashTable *table = new HashTable();
+	/*cout << table->hashFunction(20);
+	cout << table->hashFunction(101);*/
 	
-	map<int, int> m;
-	
-	//insert new pair to map
-	/*pair<int, int> p1 {2, 5};
-	m.insert(p1);
-	m.insert(make_pair(3,1));*/
-	//cout << m[2] << endl << m[3] << endl; //OK
-	
-	//generate the hash table with map from STL
-	for (int i = 0; i < size1; i++)
-	{
-		m.insert(make_pair(i+1,arr1[i]));
-		
-		if (m.count(i+1) > 0)
-		{
-			
-			//cout << arr1[i] << "is an element of the map" << endl;
-			cout << arr1[i] << "is the first recurring char" << endl;
-			break;
-		}
-		
-		/*for (int j = 0; j < size1; j++)
-		{
-			int temp = arr1[j];
-			if (temp == m[i])
-			{
-				cout << "found it";
-			}
-		}*/
-		//cout << m[i] << endl;
-	}
-		
-
-	//find first recurring character in array1
-	/*for (int i = 0; i < size1; i++)
-	{
-		cout << arr1[i] << endl;
-		for (int j = 0; j < size1; j++)
-		{
-			int temp = m.at(i);
-			if (temp == m.at(i))
-			{
-				cout << "got it";
-			}
-		}
-	}*/
+	table->set("grapes", 69);
+	table->get("grapes");
 }
 
 /*******************************NOTES********************************************
