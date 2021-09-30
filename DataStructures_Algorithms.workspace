@@ -6,7 +6,8 @@
   <Project Name="DataStructures_StacksQueues" Path="DataStructures_StacksQueues/DataStructures_StacksQueues.project" Active="No"/>
   <Project Name="DataStructures_Trees" Path="DataStructures_Trees/DataStructures_Trees.project" Active="No"/>
   <Project Name="DataStructures_Graphs" Path="DataStructures_Graphs/DataStructures_Graphs.project" Active="No"/>
-  <Project Name="Algorithms_Recursion" Path="Algorithms_Recursion/Algorithms_Recursion.project" Active="Yes"/>
+  <Project Name="Algorithms_Recursion" Path="Algorithms_Recursion/Algorithms_Recursion.project" Active="No"/>
+  <Project Name="Algorithms_Sorting" Path="Algorithms_Sorting/Algorithms_Sorting.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -17,6 +18,7 @@
       <Project Name="DataStructures_Trees" ConfigName="Debug"/>
       <Project Name="DataStructures_Graphs" ConfigName="Debug"/>
       <Project Name="Algorithms_Recursion" ConfigName="Debug"/>
+      <Project Name="Algorithms_Sorting" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -27,6 +29,7 @@
       <Project Name="DataStructures_Trees" ConfigName="Release"/>
       <Project Name="DataStructures_Graphs" ConfigName="Release"/>
       <Project Name="Algorithms_Recursion" ConfigName="Release"/>
+      <Project Name="Algorithms_Sorting" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
