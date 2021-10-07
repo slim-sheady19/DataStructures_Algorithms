@@ -1,1 +1,1 @@
-Debug/main.cpp.o   
+Debug/main.cpp.o Debug/map.cpp.o   

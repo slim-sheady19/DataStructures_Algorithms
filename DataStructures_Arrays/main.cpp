@@ -1,15 +1,16 @@
 #include <iostream>
-#include <string>
+//#include <string>
+#include <algorithm>
 using namespace std;
 
 string reverse(string str)
 	{
 		string str_reversed = str;
-		int str_length = str.length();
+		//int str_length = str.length(); //no need to store in variable here
 		
-		for (int i = 1; i <= str_length; i++)
+		for (int i = 1; i <= str.length(); i++)
 		{
-			str_reversed[i-1] = str[str_length-i];
+			str_reversed[i-1] = str[str.length()-i];
 		}
 		return str_reversed;
 	}
@@ -23,15 +24,19 @@ string reverse(string str)
 		for (int i = 0; i < size1; i++) //consider collapsing in to its own function for readability - same for next loop
 		{
 			merged_arrays[i] = arr1[i];
-			cout << merged_arrays[i] << "," << endl;
+			//cout << merged_arrays[i] << ", ";
 		}
-		int k = i; //REMEMBER THIS PART AND THE REST OF THE LINES WITH K
+		int k = size1; //REMEMBER THIS PART AND THE REST OF THE LINES WITH K
 		for (int j = 0; j < size2; j++)
 		{
 			
 			merged_arrays[k] = arr2[j];
 			k++; 
-			cout << merged_arrays[j] << ",";
+			//cout << merged_arrays[j] << ",";
+		}
+		for (int x = 0; x < new_array_size; x++)
+		{
+			cout << merged_arrays[x] << ", ";
 		}
 	}
 	
@@ -41,10 +46,15 @@ int main()
 {	
 	//Video 69 Reverse a string
 	cout << "Sreversing string function" << endl;
-	string str = " hi my name is shea";
+	string str = "*hi my name is shea*";
 	string reversed_string = reverse(str);
 	
 	cout << reversed_string << endl << endl;
+	
+	//INBUILT FUNCTION FROM THE STL, need the #include <algorithm>
+	reverse(reversed_string.begin(), reversed_string.end());
+	
+	cout << "the reversed again string is " << reversed_string << endl;
 	
 	
 	//Video 71 Merge sorted arrays

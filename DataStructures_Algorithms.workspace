@@ -2,12 +2,12 @@
 <CodeLite_Workspace Name="DataStructures_Algorithms" Database="" Version="10000">
   <Project Name="DataStructures_Arrays" Path="DataStructures_Arrays/DataStructures_Arrays.project" Active="No"/>
   <Project Name="DataStructures_HashTables" Path="DataStructures_HashTables/DataStructures_HashTables.project" Active="No"/>
-  <Project Name="DataStructures_LinkedLists" Path="DataStructures_LinkedLists/DataStructures_LinkedLists.project" Active="No"/>
+  <Project Name="DataStructures_LinkedLists" Path="DataStructures_LinkedLists/DataStructures_LinkedLists.project" Active="Yes"/>
   <Project Name="DataStructures_StacksQueues" Path="DataStructures_StacksQueues/DataStructures_StacksQueues.project" Active="No"/>
   <Project Name="DataStructures_Trees" Path="DataStructures_Trees/DataStructures_Trees.project" Active="No"/>
   <Project Name="DataStructures_Graphs" Path="DataStructures_Graphs/DataStructures_Graphs.project" Active="No"/>
   <Project Name="Algorithms_Recursion" Path="Algorithms_Recursion/Algorithms_Recursion.project" Active="No"/>
-  <Project Name="Algorithms_Sorting" Path="Algorithms_Sorting/Algorithms_Sorting.project" Active="Yes"/>
+  <Project Name="Algorithms_Sorting" Path="Algorithms_Sorting/Algorithms_Sorting.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>

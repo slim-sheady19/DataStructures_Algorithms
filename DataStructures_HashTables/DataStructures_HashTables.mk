@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=shea
-Date                   :=23/09/2021
+Date                   :=06/10/2021
 CodeLitePath           :="C:/Program Files/CodeLite"
 LinkerName             :="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/g++.exe"
 SharedObjectLinkerName :="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/g++.exe" -shared -fPIC
@@ -62,7 +62,7 @@ AS       := "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw6
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/map.cpp$(ObjectSuffix) 
 
 
 
@@ -98,6 +98,12 @@ $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/shea/Documents/programming_work/DataStructures_Algorithms/DataStructures_HashTables/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
+
+$(IntermediateDirectory)/map.cpp$(ObjectSuffix): map.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/map.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/map.cpp$(DependSuffix) -MM map.cpp
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/shea/Documents/programming_work/DataStructures_Algorithms/DataStructures_HashTables/map.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/map.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/map.cpp$(PreprocessSuffix): map.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/map.cpp$(PreprocessSuffix) map.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

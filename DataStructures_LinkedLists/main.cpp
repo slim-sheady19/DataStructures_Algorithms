@@ -1,95 +1,153 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-int main()
-{ 
-	//for C++ solution https://github.com/slim-sheady19/Data-Structures-and-Algorithms/blob/master/LinkedList-dataStructure/LL-implementation/main.cpp
-	
-	//pseudocode / js
-	
-	//PREPEND
-	prepend(value)
-	{
-		const newNode =
-		{
-			value: value
-			//next: this.head
-			next: null //set it to null for now
-		}
-	console.log(newNode)
-	//this.head.next = this.head
-	newNode.next = this.head
-	//rest OK
-	this.head = newNode
-	this.length++
-	return this
+class Node
+{
+public:
 
-	//INSERT
+	int value;
+	Node *next;
 	
-	insert(index, value)
+	Node(int value)
 	{
-		//first find the position by creating array of positions
-		int position_count {0};
-		//int index[] {};
-		let currentNode = this.head;
-		//traverse the list
-		while (position_count <= index)
+		this->value = value;
+		this->next = nullptr;
+	}
+};
+
+class LinkedList
+{
+public:
+
+	Node *head;
+	Node *tail;
+	int length{0};
+
+	LinkedList(int value)
+	{
+		Node *first = new Node(value);
+		
+		head = first;
+		tail = first;
+		length++;
+		cout << "first node created in new LinkedList object" << endl;
+	}
+	
+	void prepend(int value)
+	{
+		Node *new_node = new Node(value);
+		
+		if (length == 1)
 		{
-			currentNode = currentNode.next
-			position_count++;
-			if (position_count == index)
+			head = new_node;
+			head->next = tail;
+			length++;
+			cout << "new head is " << head->value << endl;
+		}
+		else
+		{
+			new_node->next = head;
+			head = new_node;
+			length++;
+			cout << "new head is " << head->value << endl;
+		}
+	}
+	
+	void append(int value)
+	{
+		Node *new_node = new Node(value);
+		
+		if (length == 1)
+		{
+			head->next = tail;
+			cout << "node next to head is " << head->next->value << endl;
+		}
+		else
+		{
+			tail->next = new_node;
+		}
+		tail = new_node;
+		
+		cout << "new node " << value << " appended at end of LL " << endl;
+	}
+	
+	void insert(int index, int value)
+	{
+		//first traverse to the index by incrementing an int
+		int traverse {0};
+		Node *current_node = head;
+		Node *prev_node;
+		
+		while (current_node != nullptr)
+		{
+			prev_node = current_node;
+			current_node = current_node->next;
+			traverse++;
+			if (traverse == index)
 			{
-				//create new node
-				newNode(value)
-				value = value
-				next = null
+				Node *new_node = new Node(value);
+				new_node->next = current_node;
+				prev_node->next = new_node;
+				length++;
 				break;
 			}
 		}
-		newNode.next = currentNode
-		this.length++
-		return this;
-		
 	}
 	
-	//REVERSE
-	
-	revers()
+	void reverse()
 	{
-		//first get number of elements in list and store as int
-		int elements {0};
-		bool reached_null = false;
-		Node current_node = this.head_node;
+		//spawn new Linked List with head as first value
 		
-		//should put if statement for only 1 element
-		while (!reached_null)
+		LinkedList *reversed_list = new LinkedList(this->head->value);
+		
+		//loop through first LL starting at index 1 since head is already spawned.
+		Node *current_node = head;
+		
+		for (int i = 1; i < this->length; i++)
 		{
 			current_node = current_node->next;
-			elements++;
-			if (current_node->next == null)
-			{
-				reached_null = true;
-			}
+			reversed_list->prepend(current_node->value);
 		}
-		
-		
-		//nested loops to reverse the list
-		//first loop iterates through all elements, change tail to head
-		//second loop starts at head + i to push tail-1 to tail
-		Node head_node = this->head_node;
-		Node tail_node = this->tail_node;
-		for (int i = 0; i < elements/2; i++)
-		{
-			head_node = this.traverse_to_index(i)
-			tail_node = this.traverse_to_index(elements-i);
-			
-		}
-		
-		
+		cout << "calling reversed list print inside reverse method" << endl;
+		reversed_list->print_list();
 	}
+	
+	void print_list()
+	{
+		//vector<Node> *vec{};
+		Node *current_node = head;
+		while (current_node != nullptr)
+		{
+			cout << current_node->value << endl;;
+			current_node = current_node->next;
+		}
+	}
+};
+
+int main()
+{ 
+	LinkedList *list = new LinkedList(10);
+	list->append(15);
+	list->append(20);
+	cout << list->head->next->value << endl;
+	cout << list->tail->value << endl;
+	list->prepend(30);
+	cout << list->head->value << endl;
+	cout << list->head->next->value << endl;
+	list->prepend(40);
+	cout << list->head->value << endl;
+	cout << list->head->next->value << endl;
+	cout << "calling print list method" << endl;
+	list->print_list();
+	cout << "calling insert method index 2 value 50" << endl;
+	list->insert(2, 50);
+	list->insert(1, 100);
+	list->print_list();
+	cout << "reversing list " << endl;
+	list->reverse();
 }
-//1, 10, 16, 88
-//88, 16, 10, 1
+
 
 /*******************************NOTES********************************************
  * 
